@@ -16,7 +16,6 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>
-		<spring-cloud-sleuth-otel.version>1.0.0-M8</spring-cloud-sleuth-otel.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -30,16 +29,6 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.cloud</groupId>
-					<artifactId>spring-cloud-sleuth-brave</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-otel-autoconfigure</artifactId>
 		</dependency>
 
 		<dependency>
@@ -67,13 +56,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-sleuth-otel-dependencies</artifactId>
-				<version>${spring-cloud-sleuth-otel.version}</version>
-				<scope>import</scope>
-				<type>pom</type>
-			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -93,27 +75,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-<!--		<repository>-->
-<!--			<id>spring-snapshots</id>-->
-<!--			<url>https://repo.spring.io/snapshot</url>-->
-<!--			<snapshots><enabled>true</enabled></snapshots>-->
-<!--		</repository>-->
-		<repository>
-			<id>spring-milestones</id>
-			<url>https://repo.spring.io/milestone</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-<!--		<pluginRepository>-->
-<!--			<id>spring-snapshots</id>-->
-<!--			<url>https://repo.spring.io/snapshot</url>-->
-<!--		</pluginRepository>-->
-		<pluginRepository>
-			<id>spring-milestones</id>
-			<url>https://repo.spring.io/milestone</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 </project>
